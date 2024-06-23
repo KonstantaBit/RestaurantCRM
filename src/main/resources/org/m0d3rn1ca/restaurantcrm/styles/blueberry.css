@@ -1,0 +1,36 @@
+.main-pane {
+    -fx-background-color: #FFF3E6;
+    -fx-background-image: url('../assets/blueberry_background.png');
+}
+
+.text-box {
+    -fx-background-color: #FFF3E6;
+    -fx-border-color: #0D335D;
+    -fx-border-radius: 10;
+    -fx-background-radius: 11;
+}
+
+.text-box:hover {
+    -fx-background-color: #DDD;
+}
+
+.text-box:focused {
+    -fx-background-color: #DDD;
+}
+
+
+.button-a {
+    -fx-background-color: #FFF3E6;
+    -fx-border-color: #0D335D;
+    -fx-border-radius: 10;
+    -fx-background-radius: 11;
+    -fx-border-width: 2;
+}
+
+.button-a:hover {
+    -fx-background-color: #BBB;
+}
+
+.button-a:pressed {
+    -fx-background-color: #C1A1D3;
+}

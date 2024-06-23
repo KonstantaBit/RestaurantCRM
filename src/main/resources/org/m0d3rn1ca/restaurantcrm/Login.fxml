@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" styleClass="main-pane" stylesheets="@styles/blueberry.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.m0d3rn1ca.restaurantcrm.LoginController">
+    <Pane layoutX="240.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-border-color: #0D335D; -fx-border-radius: 10; -fx-background-color: #4A70BB; -fx-background-radius: 10; -fx-border-width: 2;">
+        <Label alignment="CENTER" layoutX="50.0" layoutY="20.0" prefHeight="50.0" prefWidth="500.0" text="Добро пожаловать!" textAlignment="CENTER" textFill="#0d335d">
+            <font>
+                <Font name="Cantarell Regular" size="36.0" />
+            </font>
+        </Label>
+        <TextField fx:id="login" layoutX="50.0" layoutY="80.0" prefHeight="50.0" prefWidth="500.0" promptText="Логин" styleClass="text-box" stylesheets="@styles/blueberry.css">
+            <font>
+                <Font name="Arial" size="24.0" />
+            </font>
+        </TextField>
+        <CheckBox fx:id="remember_me" alignment="CENTER" layoutX="50.0" layoutY="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="500.0" text="Запомнить меня" textFill="#0d335d">
+            <font>
+                <Font name="Arial" size="24.0" />
+            </font>
+        </CheckBox>
+        <Button fx:id="submit" layoutX="50.0" layoutY="260.0" mnemonicParsing="false" onAction="#checkData" prefHeight="50.0" prefWidth="500.0" styleClass="button-a" stylesheets="@styles/blueberry.css" text="Вход" textFill="#0d335d">
+            <font>
+                <Font name="Arial" size="24.0" />
+            </font>
+        </Button>
+        <PasswordField fx:id="password" layoutX="50.0" layoutY="140.0" prefHeight="50.0" prefWidth="500.0" promptText="Пароль" styleClass="text-box" stylesheets="@styles/blueberry.css">
+            <font>
+                <Font name="Arial" size="24.0" />
+            </font>
+        </PasswordField>
+       <ImageView fitHeight="120.0" fitWidth="300.0" layoutX="150.0" layoutY="350.0">
+          <Image url="@assets/blueberry_branch.png" />
+       </ImageView>
+    </Pane>
+</AnchorPane>
