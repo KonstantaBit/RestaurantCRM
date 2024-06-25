@@ -18,6 +18,13 @@
     -fx-background-color: #DDD;
 }
 
+.label-a {
+    -fx-background-color: #C1A1D3;
+    -fx-border-color: #0D335D;
+    -fx-border-radius: 10;
+    -fx-background-radius: 11;
+}
+
 
 .button-a {
     -fx-background-color: #FFF3E6;

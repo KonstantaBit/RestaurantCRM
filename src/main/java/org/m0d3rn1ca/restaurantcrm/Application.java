@@ -7,17 +7,21 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Application extends javafx.application.Application {
+    private SceneManager scene_manager;
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("Login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
-        System.out.println(this);
+        scene_manager = SceneManager.getInstance();
+        scene_manager.setStage(stage);
+        scene_manager.setScene("Login.fxml", 1080, 720);
     }
 
     public static void main(String[] args) {
         launch();
+    }
+
+    @Override
+    public void stop() throws Exception {
+        CachedConnector.getInstance().closeConnection();
+        super.stop();
     }
 }

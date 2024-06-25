@@ -9,6 +9,8 @@ public class CachedConnector {
     private static CachedConnector INSTANCE;
     private Connection connection;
     private CacheOperator cacheOperator;
+    private String login = null;
+
     private CachedConnector() {
         try {
             connection = DriverManager.getConnection(
@@ -21,9 +23,8 @@ public class CachedConnector {
     }
 
     public static CachedConnector getInstance() {
-        if (INSTANCE == null) {
+        if (INSTANCE == null)
             INSTANCE = new CachedConnector();
-        }
         return INSTANCE;
     }
 
@@ -46,13 +47,24 @@ public class CachedConnector {
             if (result.isBeforeFirst()) { // Проверка на наличие данных
                 cacheOperator.addCache(1, new ArrayList<String>(List.of(new String[]{login})), result);
                 return cacheOperator.getCache(1, new ArrayList<String>(List.of(new String[]{login}))).getFirst();
-            } else {
-                cacheOperator.addCache(1, new ArrayList<String>(List.of(new String[]{login})), null);
-                return null;
             }
+            cacheOperator.addCache(1, new ArrayList<String>(List.of(new String[]{login})), null);
+            return null;
         } catch (SQLException exception) {
             System.out.println(exception.toString());
         }
         return null;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public HashMap<String, Object> getCurrentUser() {
+        return getUserByLogin(login);
     }
 }
