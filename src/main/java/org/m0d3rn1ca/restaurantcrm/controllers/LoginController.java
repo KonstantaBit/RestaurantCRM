@@ -1,4 +1,4 @@
-package org.m0d3rn1ca.restaurantcrm;
+package org.m0d3rn1ca.restaurantcrm.controllers;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -9,6 +9,7 @@ import java.util.HashMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import org.m0d3rn1ca.restaurantcrm.SceneManager;
 
 public class LoginController {
     @FXML
@@ -26,7 +27,7 @@ public class LoginController {
     @FXML
     protected void checkData(ActionEvent event) throws NoSuchAlgorithmException, IOException {
         CachedConnector connector = CachedConnector.getInstance();
-        HashMap<String, Object> result = connector.getUserByLogin(login.getText());
+        HashMap<String, Object> result = connector.getUser(login.getText());
         if (result == null)
             return;
 
@@ -36,7 +37,7 @@ public class LoginController {
         System.out.println(password_hash);
         if (result.get("password").equals(password_hash)) {
             connector.setLogin(login.getText());
-            SceneManager.getInstance().setScene("Cabinet.fxml", 1080, 720);
+            SceneManager.getInstance().setScene("Buffer.fxml", 1080, 720);
         }
     }
 }

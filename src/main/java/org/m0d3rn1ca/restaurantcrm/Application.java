@@ -1,8 +1,7 @@
 package org.m0d3rn1ca.restaurantcrm;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.m0d3rn1ca.restaurantcrm.controllers.CachedConnector;
 
 import java.io.IOException;
 

@@ -1,11 +1,13 @@
-package org.m0d3rn1ca.restaurantcrm;
+package org.m0d3rn1ca.restaurantcrm.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import org.m0d3rn1ca.restaurantcrm.SceneManager;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
@@ -32,15 +34,32 @@ public class CabinetController implements Initializable {
         ITN.setText((String) result.get("ITN"));
         phone.setText((String) result.get("phone_number"));
         address.setText((String) result.get("residential_address"));
-        full_name.setText(String.format("%s %s %s", (String) result.get("last_name"), (String) result.get("first_name"), (String) result.get("patronymic")));
+        full_name.setText(String.format("%s %s %s", result.get("last_name"), result.get("first_name"), result.get("patronymic")));
     }
 
     @FXML
     protected void put_data(ActionEvent event) {
-        if (SceneManager.getInstance().dialog())
-            System.out.println(1);
-        else
-            System.out.println(2);
+        if (SceneManager.getInstance().dialog()) {
+            CachedConnector CC = CachedConnector.getInstance();
+            CC.setUser("*", "*", "*", address.getText(), ITN.getText(), phone.getText(), CC.getLogin());
+        }
         update();
+    }
+
+    @FXML
+    protected void put_password(ActionEvent event) {
+        // TODO:
+        update();
+    }
+
+    @FXML
+    protected void backward(ActionEvent event) throws IOException {
+        SceneManager.getInstance().setScene("Buffer.fxml", 1080, 720);
+    }
+
+    @FXML
+    protected void quitf(ActionEvent event) {
+        // TODO: сделать ценрализованный выход
+        System.exit(0);
     }
 }

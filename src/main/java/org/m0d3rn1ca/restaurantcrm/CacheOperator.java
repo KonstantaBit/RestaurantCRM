@@ -20,6 +20,13 @@ public class CacheOperator {
         return null;
     }
 
+    public boolean checkCache(int id_of_query, ArrayList<String> input) {
+        for (Cache cache : caches)
+            if (cache.getId_of_query() == id_of_query && cache.getInput().equals(input))
+                return true;
+        return false;
+    }
+
     public void flushCache() {
         caches.clear();
     }
@@ -29,6 +36,7 @@ public class CacheOperator {
 //    }
 
     public void removeCache(int id_of_query) {
+        System.out.println(id_of_query);
         caches.removeIf(cache -> cache.getId_of_query() == id_of_query);
     }
 
@@ -36,7 +44,7 @@ public class CacheOperator {
 //        caches.add(cache);
 //    }
 
-    private ArrayList<HashMap<String, Object>> convertResultSetToList(ResultSet rs) throws SQLException {
+    public ArrayList<HashMap<String, Object>> convertResultSetToList(ResultSet rs) throws SQLException {
         ResultSetMetaData md = rs.getMetaData();
         int columns = md.getColumnCount();
         ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
@@ -50,10 +58,22 @@ public class CacheOperator {
         return list;
     }
 
-    public void addCache(int query_id, ArrayList<String> input ,ResultSet rs) throws SQLException {
+    public void addCache(int query_id, ArrayList<String> input, ResultSet rs) throws SQLException {
         if (rs == null)
             caches.add(new Cache(query_id, input, null));
         else
             caches.add(new Cache(query_id, input, convertResultSetToList(rs)));
+    }
+
+    public void addCache(int query_id, ArrayList<String> input, ArrayList<HashMap<String, Object>> output) throws SQLException {
+        caches.add(new Cache(query_id, input, output));
+    }
+
+    public ArrayList<HashMap<String, Object>> getCaches(int id_of_query) {
+        ArrayList<HashMap<String, Object>> response = new ArrayList<>();
+        for (Cache cache : caches)
+            if (cache.getId_of_query() == id_of_query)
+                response.addAll(cache.getOutput());
+        return response;
     }
 }
