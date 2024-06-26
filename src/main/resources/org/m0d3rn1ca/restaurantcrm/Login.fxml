@@ -23,7 +23,7 @@
                 <Font name="Arial" size="24.0" />
             </font>
         </TextField>
-        <CheckBox fx:id="remember_me" alignment="CENTER" layoutX="50.0" layoutY="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="500.0" text="Запомнить меня" textFill="#0d335d">
+        <CheckBox fx:id="remember_me" alignment="CENTER" disable="true" layoutX="50.0" layoutY="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="500.0" text="Запомнить меня" textFill="#0d335d">
             <font>
                 <Font name="Arial" size="24.0" />
             </font>
@@ -38,8 +38,13 @@
                 <Font name="Arial" size="24.0" />
             </font>
         </PasswordField>
-       <ImageView fitHeight="120.0" fitWidth="300.0" layoutX="150.0" layoutY="350.0">
+       <ImageView fitHeight="120.0" fitWidth="300.0" layoutX="150.0" layoutY="366.0">
           <Image url="@assets/blueberry_branch.png" />
        </ImageView>
+      <Label fx:id="error" alignment="CENTER" layoutX="50.0" layoutY="316.0" prefHeight="50.0" prefWidth="500.0" text="Пользователя с таким логином не существует" textFill="RED" visible="false">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
     </Pane>
 </AnchorPane>

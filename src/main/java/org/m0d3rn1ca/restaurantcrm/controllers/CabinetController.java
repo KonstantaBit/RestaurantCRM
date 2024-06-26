@@ -55,7 +55,7 @@ public class CabinetController implements Initializable {
 
     @FXML
     protected void backward(ActionEvent event) throws IOException {
-        SceneManager.getInstance().setScene("Buffer.fxml", 1080, 720);
+        SceneManager.getInstance().setScene("Actions.fxml", 1080, 720);
     }
 
     @FXML
