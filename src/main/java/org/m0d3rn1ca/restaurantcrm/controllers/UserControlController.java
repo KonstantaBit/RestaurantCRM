@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.m0d3rn1ca.restaurantcrm.CachedConnector;
+import org.m0d3rn1ca.restaurantcrm.Connector;
 import org.m0d3rn1ca.restaurantcrm.Person;
 import org.m0d3rn1ca.restaurantcrm.SceneManager;
 
@@ -67,7 +67,7 @@ public class UserControlController implements Initializable {
         //TableView<Person> table = new TableView<>();
         ObservableList<Person> people = FXCollections.observableArrayList();
 
-        CachedConnector CC = CachedConnector.getInstance();
+        Connector CC = Connector.getInstance();
         for (HashMap<String, Object> user : CC.getUsers()) {
             Person temp = new Person(
                     (Integer) user.get("ID"),
@@ -100,7 +100,7 @@ public class UserControlController implements Initializable {
     @FXML
     protected void delete_user(ActionEvent actionEvent) {
         Person p = table.getSelectionModel().getSelectedItem();
-        CachedConnector.getInstance().deleteUser(p.getLogin());
+        Connector.getInstance().deleteUser(p.getLogin());
         update();
     }
 

@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import org.m0d3rn1ca.restaurantcrm.CachedConnector;
+import org.m0d3rn1ca.restaurantcrm.Connector;
 import org.m0d3rn1ca.restaurantcrm.SceneManager;
 
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class PermissionController implements Initializable {
     private Button ingredients;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        CachedConnector cc = CachedConnector.getInstance();
+        Connector cc = Connector.getInstance();
 //        ArrayList<HashMap<String, Object>> result = cc.getUserRoles(cc.getLogin());
 //        for (HashMap<String, Object> element : result) {
 //

@@ -10,7 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.m0d3rn1ca.restaurantcrm.CachedConnector;
+import org.m0d3rn1ca.restaurantcrm.Connector;
 import org.m0d3rn1ca.restaurantcrm.Table;
 
 import java.net.URL;
@@ -46,7 +46,7 @@ public class TableManagerController implements Initializable {
     private void update() {
         ObservableList<Table> tables = FXCollections.observableArrayList();
 
-        for (HashMap<String, Object> user : CachedConnector.getInstance().getUsers()) {
+        for (HashMap<String, Object> user : Connector.getInstance().getUsers()) {
             Table temp = new Table(
                     (Integer) user.get("ID"),
                     (Integer) user.get("capacity")
@@ -60,7 +60,7 @@ public class TableManagerController implements Initializable {
 
     @FXML
     protected void create_table(ActionEvent event) {
-       CachedConnector.getInstance()
+       Connector.getInstance()
     }
 
 
