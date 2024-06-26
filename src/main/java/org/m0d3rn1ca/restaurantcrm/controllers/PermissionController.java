@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import org.m0d3rn1ca.restaurantcrm.CachedConnector;
 import org.m0d3rn1ca.restaurantcrm.SceneManager;
 
 import java.io.IOException;

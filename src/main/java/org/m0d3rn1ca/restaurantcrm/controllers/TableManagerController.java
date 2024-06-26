@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.m0d3rn1ca.restaurantcrm.CachedConnector;
 import org.m0d3rn1ca.restaurantcrm.Table;
 
 import java.net.URL;

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.m0d3rn1ca.restaurantcrm.CachedConnector;
 import org.m0d3rn1ca.restaurantcrm.Person;
 import org.m0d3rn1ca.restaurantcrm.SceneManager;
 

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import org.m0d3rn1ca.restaurantcrm.CachedConnector;
 import org.m0d3rn1ca.restaurantcrm.SceneManager;
 
 import java.io.IOException;

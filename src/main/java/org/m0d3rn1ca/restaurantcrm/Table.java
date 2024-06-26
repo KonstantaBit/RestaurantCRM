@@ -2,7 +2,7 @@ package org.m0d3rn1ca.restaurantcrm;
 
 import javafx.beans.property.*;
 
-public class Table {
+public class Table  {
     private SimpleIntegerProperty ID;
     private SimpleIntegerProperty capacity;
 

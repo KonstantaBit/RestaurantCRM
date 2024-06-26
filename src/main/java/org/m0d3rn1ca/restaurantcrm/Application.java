@@ -1,7 +1,6 @@
 package org.m0d3rn1ca.restaurantcrm;
 
 import javafx.stage.Stage;
-import org.m0d3rn1ca.restaurantcrm.controllers.CachedConnector;
 
 import java.io.IOException;
 
