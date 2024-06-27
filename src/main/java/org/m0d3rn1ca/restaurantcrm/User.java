@@ -55,6 +55,42 @@ public class User implements Cloneable {
         return address;
     }
 
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setFirstName(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public void setLastName(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setPassword(String hashed_password) {
+        this.hashed_password = hashed_password;
+    }
+
+    public void setITN(String ITN) {
+        this.ITN = ITN;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getFullName() {
         // Если у человека отсутствует отчество, то оно не возвращается
         if (patronymic == null || patronymic.isBlank())

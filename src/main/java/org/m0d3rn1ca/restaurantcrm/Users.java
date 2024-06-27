@@ -29,6 +29,26 @@ public class Users {
         this.current = current;
     }
 
+    public void addUser(User new_user) {
+        try {
+            String query = "INSERT INTO `users` (`ID`, `last_name`, `first_name`, `patronymic`, `residential_address`, `ITN`, `phone_number`, `login`, `password`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?);";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, new_user.getLastName());
+            statement.setString(2, new_user.getFirstName());
+            statement.setString(3, new_user.getPatronymic());
+            statement.setString(4, new_user.getAddress());
+            statement.setString(5, new_user.getITN());
+            statement.setString(6, new_user.getPhone());
+            statement.setString(7, new_user.getLogin());
+            statement.setString(8, new_user.getPassword());
+            statement.execute();
+            getUser(new_user.getLogin()); // Уточняем у сервера какой ID у пользователя и сохраняем в кэш
+        } catch (SQLException exception) {
+            System.out.println(exception.toString());
+        }
+    }
+
+
     public User getUser(int id) {
         for (User user : this.contain)
             if (user.getID() == id)
@@ -120,5 +140,21 @@ public class Users {
         } catch (SQLException exception) {
             System.out.println(exception.toString());
         }
+    }
+
+    public ArrayList<User> getUsers() {
+        try {
+            ArrayList<User> users = new ArrayList<>();
+            String query = "SELECT id FROM users";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.execute();
+            ResultSet rs = statement.getResultSet();
+            while (rs.next())
+                users.add(getUser(rs.getInt("ID")));
+            return users;
+        } catch (SQLException exception) {
+            System.out.println(exception.toString());
+        }
+        return null;
     }
 }

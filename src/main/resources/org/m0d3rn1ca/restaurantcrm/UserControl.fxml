@@ -16,22 +16,22 @@
                 <Font name="Cantarell Regular" size="36.0" />
             </font>
         </Label>
-      <Button fx:id="create_user" alignment="CENTER" layoutX="681.0" layoutY="500.0" mnemonicParsing="false" onAction="#create_user" prefHeight="50.0" prefWidth="310.0" styleClass="button-a" text="Создать пользователя">
+      <Button fx:id="create_user" alignment="CENTER" layoutX="52.0" layoutY="440.0" mnemonicParsing="false" onAction="#create_user" prefHeight="50.0" prefWidth="300.0" styleClass="button-a" text="Создать пользователя">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="back" alignment="CENTER" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" styleClass="button-a" text="Назад">
+      <Button fx:id="back" alignment="CENTER" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#backf" styleClass="button-a" text="Назад">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="quit" alignment="CENTER" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" styleClass="button-a" text="Выйти">
+      <Button fx:id="quit" alignment="CENTER" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#quitf" styleClass="button-a" text="Выйти">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <TableView fx:id="table" layoutX="50.0" layoutY="80.0" prefHeight="400.0" prefWidth="940.0">
+      <TableView fx:id="table" layoutX="50.0" layoutY="80.0" prefHeight="345.0" prefWidth="940.0">
         <columns>
           <TableColumn fx:id="col_id" editable="false" prefWidth="30.0" text="ID" />
             <TableColumn fx:id="col_login" prefWidth="179.0" text="Логин" />
@@ -47,12 +47,7 @@
             <TableColumn fx:id="col_address" prefWidth="187.0" text="Адрес" />
         </columns>
       </TableView>
-      <Button fx:id="delete_user" alignment="CENTER" layoutX="681.0" layoutY="560.0" mnemonicParsing="false" onAction="#delete_user" prefHeight="50.0" prefWidth="310.0" styleClass="button-a" text="Удалить пользователя">
-         <font>
-            <Font name="Arial Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="update_user" alignment="CENTER" layoutX="681.0" layoutY="620.0" mnemonicParsing="false" onAction="#update_user" prefHeight="50.0" prefWidth="310.0" styleClass="button-a" text="Изменить пользователя">
+      <Button fx:id="delete_user" alignment="CENTER" layoutX="370.0" layoutY="440.0" mnemonicParsing="false" onAction="#delete_user" prefHeight="50.0" prefWidth="300.0" styleClass="button-a" text="Удалить пользователя">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font>
@@ -87,5 +82,20 @@
             <Font name="Arial" size="18.0" />
          </font>
       </TextField>
+      <TextField fx:id="login" layoutX="690.0" layoutY="500.0" prefHeight="50.0" prefWidth="300.0" promptText="Логин" styleClass="text-box">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="password" layoutX="690.0" layoutY="560.0" prefHeight="50.0" prefWidth="300.0" promptText="Пароль" styleClass="text-box">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="edit_role" alignment="CENTER" layoutX="690.0" layoutY="440.0" mnemonicParsing="false" onAction="#edit_role" prefHeight="50.0" prefWidth="300.0" styleClass="button-a" text="Редактировать роли">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
     </Pane>
 </AnchorPane>
