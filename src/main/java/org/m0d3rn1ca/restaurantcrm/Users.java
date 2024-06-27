@@ -89,10 +89,10 @@ public class Users {
 
     public void setUser(int id, User new_user) {
         for (int i = 0; i < contain.size(); ++i)
-                if (contain.get(i).getID() == id)
-                    contain.set(i, new_user);
+            if (contain.get(i).getID() == id)
+                contain.set(i, new_user);
         try {
-            String query = "UPDATE `users` SET `last_name` = ?, `first_name` = ?, `patronymic` = ?, `residential_address` = ?, `ITN` = ?, `phone_number` = ? WHERE `users`.`id` = ?;";
+            String query = "UPDATE `users` SET `last_name` = ?, `first_name` = ?, `patronymic` = ?, `residential_address` = ?, `ITN` = ?, `phone_number` = ?, `password` = ? WHERE `users`.`id` = ?;";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, new_user.getLastName());
             statement.setString(2, new_user.getFirstName());
@@ -100,7 +100,8 @@ public class Users {
             statement.setString(4, new_user.getAddress());
             statement.setString(5, new_user.getITN());
             statement.setString(6, new_user.getPhone());
-            statement.setString(7, new_user.getLogin());
+            statement.setString(7, new_user.getPassword());
+            statement.setInt(8, new_user.getID());
             statement.execute();
         } catch (SQLException exception) {
             System.out.println(exception.toString());

@@ -12,4 +12,6 @@ module org.m0d3rn1ca.restaurantcrm {
 
     opens org.m0d3rn1ca.restaurantcrm to javafx.fxml;
     exports org.m0d3rn1ca.restaurantcrm;
+    exports org.m0d3rn1ca.restaurantcrm.controllers;
+    opens org.m0d3rn1ca.restaurantcrm.controllers to javafx.fxml;
 }

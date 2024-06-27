@@ -15,7 +15,7 @@
                 <Font name="Cantarell Regular" size="36.0" />
             </font>
         </Label>
-        <TextField fx:id="full_name" editable="false" layoutX="250.0" layoutY="80.0" prefHeight="50.0" prefWidth="500.0" promptText="ФИО" styleClass="text-box" stylesheets="@styles/blueberry.css">
+        <TextField fx:id="last_name" layoutX="250.0" layoutY="80.0" prefHeight="50.0" prefWidth="160.0" promptText="Фамилия" styleClass="text-box" stylesheets="@styles/blueberry.css">
             <font>
                 <Font name="Arial" size="24.0" />
             </font>
@@ -75,7 +75,7 @@
             <Font name="Cantarell Regular" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="change_password" alignment="CENTER" layoutX="50.0" layoutY="511.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="700.0" styleClass="button-a" text="Изменить данные">
+      <Button fx:id="change_password" alignment="CENTER" layoutX="50.0" layoutY="511.0" mnemonicParsing="false" onAction="#put_password" prefHeight="24.0" prefWidth="700.0" styleClass="button-a" text="Изменить данные">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
@@ -90,5 +90,15 @@
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
+      <TextField fx:id="patronymic" layoutX="590.0" layoutY="80.0" prefHeight="50.0" prefWidth="160.0" promptText="Отчество" styleClass="text-box" stylesheets="@styles/blueberry.css">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="first_name" layoutX="420.0" layoutY="80.0" prefHeight="50.0" prefWidth="160.0" promptText="Имя" styleClass="text-box" stylesheets="@styles/blueberry.css">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </TextField>
     </Pane>
 </AnchorPane>

@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class User {
+public class User implements Cloneable {
     private int ID;
     private String last_name;
     private String first_name;
@@ -28,11 +28,11 @@ public class User {
     }
 
     public String getLastName() {
-        return first_name;
+        return last_name;
     }
 
     public String getPatronymic() {
-        return first_name;
+        return patronymic;
     }
 
     public String getLogin() {
@@ -81,6 +81,20 @@ public class User {
 
     public static Builder newBuilder(int ID, String login) {
         return new User().new Builder(ID, login);
+    }
+
+    public Builder reBuilder() {
+        return this.new Builder(ID, login);
+    }
+
+    @Override
+    public User clone() {
+        try {
+            // TODO: copy mutable state here, so the clone can't change the internals of the original
+            return (User) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 
     public class Builder {
