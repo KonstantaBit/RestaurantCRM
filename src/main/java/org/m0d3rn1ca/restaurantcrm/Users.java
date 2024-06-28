@@ -48,7 +48,6 @@ public class Users {
         }
     }
 
-
     public User getUser(int id) {
         for (User user : this.contain)
             if (user.getID() == id)

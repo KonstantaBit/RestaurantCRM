@@ -12,19 +12,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PermissionController implements Initializable {
-    @FXML
-    private Button cabinet;
-    @FXML
-    private Button user_control;
-    @FXML
-    private Button ingredients;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Connector cc = Connector.getInstance();
-//        ArrayList<HashMap<String, Object>> result = cc.getUserRoles(cc.getLogin());
-//        for (HashMap<String, Object> element : result) {
-//
-//        }
+
     }
 
     @FXML
@@ -35,5 +25,10 @@ public class PermissionController implements Initializable {
     @FXML
     protected void toUserControl(ActionEvent event) throws IOException {
         SceneManager.getInstance().setScene("UserControl.fxml", 1080, 720);
+    }
+
+    @FXML
+    protected void toTableControl(ActionEvent event) throws IOException {
+        SceneManager.getInstance().setScene("TableControl.fxml", 1080, 720);
     }
 }

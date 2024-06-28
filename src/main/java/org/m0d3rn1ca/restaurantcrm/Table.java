@@ -3,27 +3,27 @@ package org.m0d3rn1ca.restaurantcrm;
 import javafx.beans.property.*;
 
 public class Table  {
-    private SimpleIntegerProperty ID;
-    private SimpleIntegerProperty capacity;
+    private int ID;
+    private int capacity;
 
     public Table(int ID, int capacity) {
-        this.ID = new SimpleIntegerProperty(ID);
-        this.capacity = new SimpleIntegerProperty(capacity);
+        this.ID = ID;
+        this.capacity = capacity;
     }
 
     public int getID() {
-        return ID.get();
+        return ID;
     }
 
     public void setID(int ID) {
-        this.ID.set(ID);
+        this.ID = ID;
     }
 
     public int getCapacity() {
-        return capacity.get();
+        return capacity;
     }
 
     public void setCapacity(int capacity) {
-        this.capacity.set(capacity);
+        this.capacity = capacity;
     }
 }
