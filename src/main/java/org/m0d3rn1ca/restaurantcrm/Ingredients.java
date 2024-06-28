@@ -66,9 +66,10 @@ public class Ingredients {
             if (contain.get(i).getID() == id)
                 contain.set(i, new_ingredient);
         try {
-            String query = "UPDATE `ingredients` SET `capacity` = ? WHERE `ingredients`.`id` = ?;";
+            String query = "UPDATE `ingredients` SET `amount` = ? WHERE `ingredients`.`id` = ?;";
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1, new_ingredient.getID());
+            statement.setFloat(1, new_ingredient.getAmount());
+            statement.setInt(2, new_ingredient.getID());
             statement.execute();
         } catch (SQLException exception) {
             System.out.println(exception.toString());
