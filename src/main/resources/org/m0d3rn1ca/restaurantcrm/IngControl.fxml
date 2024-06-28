@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" styleClass="main-pane" stylesheets="@styles/blueberry.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.m0d3rn1ca.restaurantcrm.controllers.IngredientControlController">
+    <Pane layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1040.0" style="-fx-border-color: #0D335D; -fx-border-radius: 10; -fx-background-color: #4A70BB; -fx-background-radius: 10; -fx-border-width: 2;">
+        <Label alignment="CENTER" layoutX="50.0" layoutY="20.0" prefHeight="50.0" prefWidth="940.0" text="Менеджер ингридиентов" textAlignment="CENTER" textFill="#0d335d">
+            <font>
+                <Font name="Cantarell Regular" size="36.0" />
+            </font>
+        </Label>
+      <Button alignment="CENTER" layoutX="550.0" layoutY="550.0" mnemonicParsing="false" onAction="#delete_ing" prefHeight="50.0" prefWidth="435.0" styleClass="button-a" text="Удалить ингридиент" textFill="#0d335d">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="back" alignment="CENTER" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#backf" styleClass="button-a" text="Назад" textFill="#0d335d">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="quit" alignment="CENTER" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#quitf" styleClass="button-a" text="Выйти" textFill="#0d335d">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+      <TableView fx:id="table_view" layoutX="50.0" layoutY="80.0" prefHeight="400.0" prefWidth="940.0">
+        <columns>
+          <TableColumn fx:id="col_id" editable="false" prefWidth="70.0" text="ID" />
+            <TableColumn fx:id="col_name" prefWidth="449.0" text="Название" />
+            <TableColumn fx:id="col_amount" prefWidth="237.0" text="Количество" />
+            <TableColumn fx:id="col_unit" prefWidth="183.0" text="Единица измерения" />
+        </columns>
+      </TableView>
+      <TextField fx:id="name" layoutX="52.0" layoutY="488.0" prefHeight="50.0" prefWidth="435.0" promptText="Название" styleClass="text-box">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </TextField>
+      <Button alignment="CENTER" layoutX="550.0" layoutY="488.0" mnemonicParsing="false" onAction="#create_ing" prefHeight="50.0" prefWidth="435.0" styleClass="button-a" text="Добавить ингридиент" textFill="#0d335d">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="amount" layoutX="50.0" layoutY="550.0" prefHeight="50.0" prefWidth="435.0" promptText="Количество" styleClass="text-box">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="combo_unit" layoutX="50.0" layoutY="610.0" prefHeight="50.0" prefWidth="435.0" styleClass="text-box" />
+    </Pane>
+</AnchorPane>

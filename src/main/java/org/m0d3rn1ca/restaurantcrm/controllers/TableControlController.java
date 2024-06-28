@@ -101,6 +101,4 @@ public class TableControlController implements Initializable {
         // TODO: сделать ценрализованный выход
         System.exit(0);
     }
-
-
 }

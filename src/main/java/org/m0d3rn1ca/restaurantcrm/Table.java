@@ -1,7 +1,5 @@
 package org.m0d3rn1ca.restaurantcrm;
 
-import javafx.beans.property.*;
-
 public class Table  {
     private int ID;
     private int capacity;
@@ -13,10 +11,6 @@ public class Table  {
 
     public int getID() {
         return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
     }
 
     public int getCapacity() {
