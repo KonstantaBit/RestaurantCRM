@@ -61,6 +61,32 @@ public class Ingredients {
         return null;
     }
 
+    public Ingredient getIngredient(String name) {
+        for (Ingredient ingredient : this.contain)
+            if (ingredient.getName().equals(name))
+                return ingredient;
+        try {
+            String query = "SELECT * FROM `ingredients` WHERE `name` = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, name);
+            statement.execute();
+            ResultSet rs = statement.getResultSet();
+            rs.next();
+            Ingredient ingredient = new Ingredient(
+                    rs.getInt("ID"),
+                    rs.getString("unit"),
+                    rs.getString("name"),
+                    rs.getFloat("amount")
+            );
+            contain.add(ingredient);
+            return ingredient;
+        } catch (SQLException exception) {
+            // TODO логирование
+            System.out.println(exception.toString());
+        }
+        return null;
+    }
+
     public void setIngredient(int id, Ingredient new_ingredient) {
         for (int i = 0; i < contain.size(); ++i)
             if (contain.get(i).getID() == id)

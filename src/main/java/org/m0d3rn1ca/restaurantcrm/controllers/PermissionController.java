@@ -36,4 +36,9 @@ public class PermissionController implements Initializable {
     protected void toIngControl(ActionEvent event) throws IOException {
         SceneManager.getInstance().setScene("IngControl.fxml", 1080, 720);
     }
+
+    @FXML
+    protected void toFoodControl(ActionEvent event) throws IOException {
+        SceneManager.getInstance().setScene("FoodControl.fxml", 1080, 720);
+    }
 }

@@ -100,19 +100,19 @@ public class Connector {
 //        } catch (SQLException exception) {
 //            System.out.println(exception.toString());
 //        }
-//    }
+//    }public void deleteUser(String login) { // User D
+////        try {
+////            String query = "DELETE FROM users WHERE `users`.`login` = ?";
+////            PreparedStatement statement = connection.prepareStatement(query);
+////            statement.setString(1, login);
+////            statement.execute();
+////            cacheOperator.removeCache(1);
+////        } catch (SQLException exception) {
+////            System.out.println(exception.toString());
+////        }
+////    }
 //
-//    public void deleteUser(String login) { // User D
-//        try {
-//            String query = "DELETE FROM users WHERE `users`.`login` = ?";
-//            PreparedStatement statement = connection.prepareStatement(query);
-//            statement.setString(1, login);
-//            statement.execute();
-//            cacheOperator.removeCache(1);
-//        } catch (SQLException exception) {
-//            System.out.println(exception.toString());
-//        }
-//    }
+//
 //
 //    public ArrayList<HashMap<String, Object>> getUsers() { // User A
 //        try {
