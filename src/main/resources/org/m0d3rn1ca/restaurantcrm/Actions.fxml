@@ -46,7 +46,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toFoodControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеждер ингредиентов">
+            <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toIngControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеждер ингредиентов">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
