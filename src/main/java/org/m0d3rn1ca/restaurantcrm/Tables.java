@@ -61,7 +61,8 @@ public class Tables {
         try {
             String query = "UPDATE `tables` SET `capacity` = ? WHERE `tables`.`id` = ?;";
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1, new_table.getID());
+            statement.setInt(1, new_table.getCapacity());
+            statement.setInt(2, new_table.getID());
             statement.execute();
         } catch (SQLException exception) {
             System.out.println(exception.toString());
