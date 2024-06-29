@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" styleClass="main-pane" stylesheets="@styles/blueberry.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.m0d3rn1ca.restaurantcrm.controllers.EatingControlController">
+    <Pane fx:id="create" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1040.0" style="-fx-border-color: #0D335D; -fx-border-radius: 10; -fx-background-color: #4A70BB; -fx-background-radius: 10; -fx-border-width: 2;">
+        <Label alignment="CENTER" layoutX="50.0" layoutY="20.0" prefHeight="50.0" prefWidth="940.0" text="Менеджер заказов" textAlignment="CENTER" textFill="#0d335d">
+            <font>
+                <Font name="Cantarell Regular" size="36.0" />
+            </font>
+        </Label>
+      <Button fx:id="back" alignment="CENTER" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#backf" styleClass="button-a" text="Назад" textFill="#0d335d">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="quit" alignment="CENTER" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#quitf" styleClass="button-a" text="Выйти" textFill="#0d335d">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="550.0" layoutY="610.0" mnemonicParsing="false" onAction="#delete_food" prefHeight="50.0" prefWidth="435.0" styleClass="button-a" text="Удалить" textFill="#0d335d">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="table_foods" layoutX="550.0" layoutY="80.0" prefHeight="340.0" prefWidth="435.0">
+         <columns>
+            <TableColumn fx:id="col_name" prefWidth="318.0" text="Блюдо" />
+            <TableColumn fx:id="col_amount" prefWidth="116.0" text="Кол-во" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="550.0" layoutY="430.0" prefHeight="50.0" prefWidth="435.0" text="Добавить блюдо" textAlignment="CENTER" textFill="#0d335d">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" layoutX="550.0" layoutY="550.0" mnemonicParsing="false" onAction="#add_food" prefHeight="50.0" prefWidth="435.0" styleClass="button-a" text="Добавить" textFill="#0d335d">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="food" layoutX="550.0" layoutY="490.0" prefHeight="50.0" prefWidth="435.0" styleClass="text-box" />
+      <ComboBox fx:id="table" layoutX="50.0" layoutY="140.0" prefHeight="50.0" prefWidth="435.0" styleClass="text-box" />
+      <Label alignment="CENTER" layoutX="50.0" layoutY="80.0" prefHeight="50.0" prefWidth="435.0" text="Столик" textAlignment="CENTER" textFill="#0d335d">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="50.0" layoutY="200.0" prefHeight="50.0" prefWidth="435.0" text="Клиент" textAlignment="CENTER" textFill="#0d335d">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="client" layoutX="50.0" layoutY="260.0" prefHeight="50.0" prefWidth="435.0" styleClass="text-box" />
+      <Label alignment="CENTER" layoutX="50.0" layoutY="370.0" prefHeight="50.0" prefWidth="435.0" text="Время" textAlignment="CENTER" textFill="#0d335d">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="date" layoutX="175.0" layoutY="430.0" prefHeight="50.0" prefWidth="310.0" showWeekNumbers="true" styleClass="text-box" />
+      <ComboBox fx:id="start" layoutX="175.0" layoutY="490.0" prefHeight="50.0" prefWidth="310.0" styleClass="text-box" />
+      <ComboBox fx:id="end" layoutX="175.0" layoutY="550.0" prefHeight="50.0" prefWidth="310.0" styleClass="text-box" />
+      <Label alignment="CENTER" layoutX="52.0" layoutY="490.0" prefHeight="50.0" prefWidth="110.0" styleClass="label-a" text="Начало">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="52.0" layoutY="550.0" prefHeight="50.0" prefWidth="110.0" styleClass="label-a" text="Конец">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" layoutX="50.0" layoutY="610.0" mnemonicParsing="false" onAction="#create_eating" prefHeight="50.0" prefWidth="435.0" styleClass="button-a" text="Создать приём пищи!" textFill="#0d335d">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="50.0" layoutY="430.0" prefHeight="50.0" prefWidth="110.0" styleClass="label-a" text="Дата">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+    </Pane>
+</AnchorPane>

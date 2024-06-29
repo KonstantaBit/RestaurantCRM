@@ -6,47 +6,49 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Tables {
-    private static Tables INSTANCE;
-    private final ArrayList<Table> contain;
+public class Items {
+    private static Items INSTANCE;
+    private final ArrayList<Item> contain;
     private final Connection connection;
 
-    private Tables() {
+    private Items() {
         this.contain = new ArrayList<>();
         this.connection = Connector.getInstance().getConnection();
     }
 
-    public static Tables getInstance() {
+    public static Items getInstance() {
         if (INSTANCE == null)
-            INSTANCE = new Tables();
+            INSTANCE = new Items();
         return INSTANCE;
     }
 
-    public void addTable(Table table) {
+    public void addItem(Item new_item) {
         try {
-            String query = "INSERT INTO `tables` (`ID`, `capacity`) VALUES (NULL, ?);";
+            String query = "INSERT INTO `items` (`order_id`, `food_id`, `amount`) VALUES (?, ?, ?);";
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1, table.getCapacity());
+            statement.setInt(1, new_item.getOrderId());
+            statement.setInt(2, new_item.getFoodId());
+            statement.setInt(3, new_item.getAmount());
             statement.execute();
         } catch (SQLException exception) {
             System.out.println(exception.toString());
         }
     }
 
-    public Table getTable(int id) {
-        for (Table table : this.contain)
-            if (table.getID() == id)
-                return table;
+    public Item getItem(int id) {
+        for (Item item : this.contain)
+            if (item.getID() == id)
+                return item;
         try {
-            String query = "SELECT * FROM `tables` WHERE `id` = ?";
+            String query = "SELECT * FROM `items` WHERE `id` = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, id);
             statement.execute();
             ResultSet rs = statement.getResultSet();
             rs.next();
-            Table table = new Table(id, rs.getInt("capacity"));
-            contain.add(table);
-            return table;
+            Item item = new Item(id, rs.getInt("order_id"), rs.getInt("food_id"), rs.getInt("amount"));
+            contain.add(item);
+            return item;
         } catch (SQLException exception) {
             // TODO логирование
             System.out.println(exception.toString());
@@ -54,27 +56,27 @@ public class Tables {
         return null;
     }
 
-    public void setTable(int id, Table new_table) {
+    public void setItem(int id, Item new_item) {
         for (int i = 0; i < contain.size(); ++i)
             if (contain.get(i).getID() == id)
-                contain.set(i, new_table);
+                contain.set(i, new_item);
         try {
-            String query = "UPDATE `tables` SET `capacity` = ? WHERE `tables`.`id` = ?;";
+            String query = "UPDATE `items` SET `amount` = ? WHERE `id` = ?;";
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1, new_table.getCapacity());
-            statement.setInt(2, new_table.getID());
+            statement.setInt(1, new_item.getAmount());
+            statement.setInt(2, new_item.getID());
             statement.execute();
         } catch (SQLException exception) {
             System.out.println(exception.toString());
         }
     }
 
-    public void deleteTable(int id) {
+    public void deleteItem(int id) {
         for (int i = 0; i < contain.size(); ++i)
             if (contain.get(i).getID() == id)
                 contain.remove(contain.get(i));
         try {
-            String query = "DELETE FROM tables WHERE `tables`.`id` = ?";
+            String query = "DELETE FROM items WHERE `id` = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, id);
             statement.execute();
@@ -83,16 +85,17 @@ public class Tables {
         }
     }
 
-    public ArrayList<Table> getTables() {
+    public ArrayList<Item> getItems(int order_id) {
         try {
-            ArrayList<Table> Tables = new ArrayList<>();
-            String query = "SELECT id FROM tables";
+            ArrayList<Item> items = new ArrayList<>();
+            String query = "SELECT id FROM items WHERE order_id = ?";
             PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, order_id);
             statement.execute();
             ResultSet rs = statement.getResultSet();
             while (rs.next())
-                Tables.add(getTable(rs.getInt("ID")));
-            return Tables;
+                items.add(getItem(rs.getInt("ID")));
+            return items;
         } catch (SQLException exception) {
             System.out.println(exception.toString());
         }

@@ -54,6 +54,27 @@ public class Foods {
         return null;
     }
 
+    public Food getFood(String name) {
+        for (Food food : this.contain)
+            if (food.getName().equals(name))
+                return food;
+        try {
+            String query = "SELECT * FROM `foods` WHERE `name` = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, name);
+            statement.execute();
+            ResultSet rs = statement.getResultSet();
+            rs.next();
+            Food food = new Food(rs.getInt("ID"), name);
+            contain.add(food);
+            return food;
+        } catch (SQLException exception) {
+            // TODO логирование
+            System.out.println(exception.toString());
+        }
+        return null;
+    }
+
     public void setFood(int id, Food new_food) {
         for (int i = 0; i < contain.size(); ++i)
             if (contain.get(i).getID() == id)
