@@ -15,11 +15,6 @@
                 <Font name="Cantarell Regular" size="36.0" />
             </font>
         </Label>
-      <Button fx:id="back" alignment="CENTER" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" styleClass="button-a" text="Выйти">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-      </Button>
       <VBox layoutX="200.0" layoutY="80.0" prefHeight="481.0" prefWidth="400.0">
          <children>
             <Button fx:id="cabinet" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toCabinet" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Личный кабинет">
@@ -30,7 +25,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="user_control" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toUserControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеждер пользователей">
+            <Button fx:id="user_control" alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toUserControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеждер пользователей">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
@@ -38,7 +33,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="tabel_control" alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toTableControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеджер столиков">
+            <Button fx:id="table_control" alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toTableControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеджер столиков">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
@@ -46,7 +41,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toIngControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеждер ингредиентов">
+            <Button fx:id="ingredient_control" alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toIngControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеждер ингредиентов">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
@@ -54,7 +49,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toFoodControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеждер блюд (+рецептов)">
+            <Button fx:id="food_control" alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toFoodControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеждер блюд (+рецептов)">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
@@ -62,15 +57,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toOrderControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеджер заказов">
-               <font>
-                  <Font name="Arial Bold" size="24.0" />
-               </font>
-               <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеджер">
+            <Button fx:id="order_control" alignment="CENTER" disable="true" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toOrderControl" prefHeight="50.0" prefWidth="200.0" styleClass="button-a" text="Менеджер заказов">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>

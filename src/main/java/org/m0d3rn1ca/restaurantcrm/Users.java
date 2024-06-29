@@ -97,6 +97,7 @@ public class Users {
                     .setAddress(rs.getString("residential_address"))
                     .setPassword(rs.getString("password"))
                     .build();
+
             contain.add(user);
             return user;
         } catch (SQLException exception) {
